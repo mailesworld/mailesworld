@@ -57,8 +57,8 @@
     overflow: hidden; white-space: nowrap; background: #FF00FF; color: #FFFF00;
     font-weight: bold; padding: 4px;
   }
-  .marquee SPAN { display: inline-block; animation: scroll 12s linear infinite; }
-  @keyframes scroll { from { transform: translateX(100vw); } to { transform: translateX(-100%); } }
+  .marquee SPAN { display: inline-block; padding-right: 60px; animation: scroll 18s linear infinite; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .marquee SPAN { animation: none; } }
   .gif-row IMG { vertical-align: middle; margin: 0 10px; }
   .floaty { position: absolute; z-index: 9; }
