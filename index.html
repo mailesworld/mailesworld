@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>~*~ Debt Calculator ~*~ (Best viewed in Netscape Navigator 4.0)</TITLE>
+<META NAME="GENERATOR" CONTENT="Microsoft FrontPage 98">
+<STYLE>
+  /* tiled starry background, because of course */
+  HTML, BODY { margin:0; padding:0; background:#000; overflow-x:hidden; }
+  #page { position: relative; padding-bottom: 20px; }
+  BODY {
+    color: #00FF00;
+    font-family: "Comic Sans MS", "Times New Roman", serif;
+    text-align: center;
+    cursor: crosshair;
+  }
+  #page {
+    background-color: #000033;
+    background-image:
+      radial-gradient(white 1px, transparent 1px),
+      radial-gradient(white 1px, transparent 1px);
+    background-size: 60px 60px, 90px 90px;
+    background-position: 0 0, 30px 45px;
+  }
+  TABLE.frame {
+    margin: 20px auto 0 auto;
+    border: 6px ridge #C0C0C0;
+    background: #000066;
+    padding: 12px;
+  }
+  H1.wordart {
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 56px;
+    margin: 10px 0;
+    background: linear-gradient(90deg,#9c00ff,#ff0000,#ff8800,#ffff00,#02be02,#0000ff,#9c00ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transform: scaleY(1.4) skewY(-4deg);
+    display: inline-block;
+    filter: drop-shadow(3px 3px 0 #ff00ff);
+  }
+  .money {
+    font-family: "Courier New", monospace;
+    font-size: 40px;
+    color: #FFFF00;
+    text-shadow: 2px 2px #FF0000;
+  }
+  .label { font-size: 18px; color: #00FFFF; }
+  HR.rainbow {
+    height: 8px; border: 0;
+    background: linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,violet);
+  }
+  .blink { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .blink { animation: none; } }
+  .marquee {
+    overflow: hidden; white-space: nowrap; background: #FF00FF; color: #FFFF00;
+    font-weight: bold; padding: 4px;
+  }
+  .marquee SPAN { display: inline-block; animation: scroll 12s linear infinite; }
+  @keyframes scroll { from { transform: translateX(100vw); } to { transform: translateX(-100%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee SPAN { animation: none; } }
+  .gif-row IMG { vertical-align: middle; margin: 0 10px; }
+  .floaty { position: absolute; z-index: 9; }
+  .irish { width: 90px; height: 60px; border: 2px outset #888; background: linear-gradient(90deg,#169B62 33.3%,#fff 33.3% 66.6%,#FF883E 66.6%); animation: wave 1.2s ease-in-out infinite; }
+  @keyframes wave { 0%,100%{transform:skewY(-4deg)} 50%{transform:skewY(4deg)} }
+  @media (prefers-reduced-motion: reduce) { .irish { animation: none; } }
+  A:link { color: #FF00FF; } A:visited { color: #FF66FF; }
+  .counter { font-family: "Courier New"; background: #000; color: #0F0; border: 2px inset #888; padding: 2px 6px; }
+</STYLE>
+</HEAD>
 
+<BODY>
+<DIV ID="page">
+
+<!-- ===================== HOW TO ADD GIFS =====================
+  Old way (1999):   <IMG SRC="flames.gif">
+  Modern way (respects "reduce motion" setting) using <picture>:
+    - <source> points at the animated .gif and only kicks in when the
+      visitor has NOT asked for reduced motion
+    - <img> holds a still .png fallback (export frame 1 of the GIF)
+  Put your .gif/.png files in the SAME FOLDER as this HTML file and
+  change the SRC names. Free GeoCities-era GIFs: https://gifcities.org
+  and https://cameronsworld.net
+  ============================================================ -->
+
+<!-- Ireland flag: drawn in CSS so it works with no file. To use a real waving-flag GIF
+     instead, replace the DIV with:
+     <PICTURE><SOURCE SRCSET="ireland.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+     <IMG SRC="ireland.png" ALT="Flag of Ireland" WIDTH="90"></PICTURE> -->
+<DIV CLASS="floaty irish" STYLE="top:70px; left:25px;" ROLE="img" ARIA-LABEL="Flag of Ireland"></DIV>
+
+<!-- Yankees logo: drop your own yankees.gif / yankees.png next to this file -->
+<DIV CLASS="floaty" STYLE="top:70px; right:30px; transform: rotate(12deg);">
+  <PICTURE>
+    <SOURCE SRCSET="yankees.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+    <IMG SRC="yankees.png" ALT="New York Yankees logo" WIDTH="100">
+  </PICTURE>
+</DIV>
+
+<DIV CLASS="marquee"><SPAN>*** WELCOME TO MY AWESOME SITE *** WELCOME TO MY AWESOME SITE *** WELCOME TO MY AWESOME SITE ***</SPAN></DIV>
+
+<TABLE CLASS="frame" CELLPADDING="8">
+<TR><TD>
+
+  <DIV CLASS="gif-row">
+    <!-- GIF #1: flames on the left -->
+    <PICTURE>
+      <SOURCE SRCSET="flames.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+      <IMG SRC="flames.png" ALT="Animated flames" WIDTH="80" HEIGHT="40">
+    </PICTURE>
+
+    <H1 CLASS="wordart">Debt Calculator</H1>
+
+    <!-- GIF #2: flames on the right -->
+    <PICTURE>
+      <SOURCE SRCSET="flames.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+      <IMG SRC="flames.png" ALT="Animated flames" WIDTH="80" HEIGHT="40">
+    </PICTURE>
+  </DIV>
+
+  <HR CLASS="rainbow">
+
+  <!-- EXTRA GIF SLOT #1: e.g. a spinning dollar sign or dancing baby -->
+  <PICTURE>
+    <SOURCE SRCSET="extra1.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+    <IMG SRC="extra1.png" ALT="" WIDTH="60" HEIGHT="60">
+  </PICTURE>
+
+  <P CLASS="label">$ <SPAN ID="owed" CLASS="money">...</SPAN> owed</P>
+
+  <P CLASS="label">$ <SPAN ID="monthly" CLASS="money">...</SPAN> monthly amount to pay back</P>
+
+  <HR CLASS="rainbow">
+
+  <H2 STYLE="color:#FF00FF; font-family:Impact,sans-serif; letter-spacing:2px;">~*~ Useful Links ~*~</H2>
+  <UL STYLE="list-style:none; padding:0; font-size:18px;">
+    <!-- Replace the # with your URL and the text with the site name -->
+    <LI>&#9733; <A HREF="#">Link #1 goes here</A></LI>
+    <LI>&#9733; <A HREF="#">Link #2 goes here</A></LI>
+    <LI>&#9733; <A HREF="#">Link #3 goes here</A></LI>
+  </UL>
+
+  <!-- EXTRA GIF SLOT #2: a rainbow divider bar looks good here -->
+  <PICTURE>
+    <SOURCE SRCSET="extra2.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+    <IMG SRC="extra2.png" ALT="" WIDTH="400" HEIGHT="20">
+  </PICTURE>
+
+  <HR CLASS="rainbow">
+
+  <!-- ===================== BACKGROUND MUSIC =====================
+    1999 way:  <EMBED SRC="mysong.mid" HIDDEN="true" AUTOSTART="true" LOOP="true">
+    Browsers now BLOCK autoplaying sound, so the modern way is an opt-in
+    player. Put your song (song.mp3 / .ogg / .webm / .mid converted to mp3)
+    next to this file and change the SRC below. "loop" makes it repeat
+    forever; add "autoplay" if you want to TRY (most browsers will ignore
+    it until the visitor has clicked something on the page).
+  ============================================================ -->
+  <P CLASS="label">&#9835; Now Playing: my theme song &#9835;<BR>
+    <AUDIO CONTROLS LOOP ARIA-LABEL="Background music" SRC="song.mp3" STYLE="margin-top:6px;"></AUDIO>
+  </P>
+
+  <!-- GIF #3: the obligatory under-construction bar -->
+  <PICTURE>
+    <SOURCE SRCSET="underconstruction.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+    <IMG SRC="underconstruction.png" ALT="Under construction" WIDTH="300" HEIGHT="30">
+  </PICTURE>
+
+
+</TD></TR>
+</TABLE>
+</DIV><!-- end #page -->
+
+<SCRIPT>
+  var TOTAL = 144892;
+  var START = new Date(2025, 11, 27);   // Dec 27, 2025 (months are 0-indexed)
+  var END   = new Date(2027, 11, 27);   // Dec 27, 2027
+
+  function fmt(n) { return n.toLocaleString("en-US", {minimumFractionDigits: 4, maximumFractionDigits: 4}); }
+
+  function update() {
+    var now = new Date();
+    var frac = (END - now) / (END - START);      // share of time remaining
+    frac = Math.max(0, Math.min(1, frac));       // clamp to 0..1
+    var curr = TOTAL * frac;
+    document.getElementById("owed").textContent    = fmt(curr);
+    document.getElementById("monthly").textContent = fmt(curr / 36);
+  }
+  update();
+  setInterval(update, 50); // recalc 20x per second so the digits blur
+</SCRIPT>
+
+</BODY>
+</HTML>
