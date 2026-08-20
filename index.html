@@ -148,7 +148,7 @@
 
   <P CLASS="label">$ <SPAN ID="monthly" CLASS="money">...</SPAN> monthly amount to pay back</P>
 
-   <H3 STYLE="color:#FF00FF; font-family:Impact,sans-serif; letter-spacing:2px; margin-bottom:4px;">2026 Schedule</H3>
+   <H3 STYLE="color:#FF00FF; font-family:Impact,sans-serif; letter-spacing:2px; margin-bottom:4px;">2027 Schedule</H3>
   <TABLE ID="schedule" BORDER="1" CELLPADDING="4" CELLSPACING="0"
          STYLE="margin:0 auto; border-color:#C0C0C0; font-family:'Courier New',monospace; font-size:14px; color:#FFFF00; background:#000033;">
     <TR STYLE="color:#00FFFF;"><TH>Date</TH><TH>Owed</TH><TH>Monthly</TH></TR>
@@ -210,14 +210,14 @@
   update();
   setInterval(update, 50); 
 
-  // fill in the 2026 schedule (1st of each month)
+  // fill in the 2027 schedule (1st of each month)
   var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var tbl = document.getElementById("schedule");
   for (var m = 0; m < 12; m++) {
-    var d = new Date(2026, m, 1);
+    var d = new Date(2027, m, 1);
     var owed = TOTAL * (END - d) / (END - START);
     var row = tbl.insertRow();
-    row.insertCell().textContent = months[m] + " 1, 2026";
+    row.insertCell().textContent = months[m] + " 1, 2027";
     row.insertCell().textContent = "$" + owed.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
     row.insertCell().textContent = "$" + (owed / 36).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
     if (d <= new Date()) row.style.color = "#888888";   // grey out months already passed
