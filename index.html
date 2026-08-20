@@ -4,7 +4,6 @@
 <TITLE>~*~ Debt Dot Com ~*~ </TITLE>
 <META NAME="GENERATOR" CONTENT="Microsoft FrontPage 98">
 <STYLE>
-  /* tiled starry background, because of course */
   HTML, BODY { margin:0; padding:0; background:#000; overflow-x:hidden; }
   #page { position: relative; padding-bottom: 20px; }
   BODY {
@@ -80,7 +79,7 @@
 </STYLE>
 <SCRIPT>
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var bits = ["✨", "⭐", "💲", "⚾", "☘️"];
+    var bits = ["💲", "⚾", "☘️"];
     document.addEventListener("mousemove", function (e) {
       var s = document.createElement("SPAN");
       s.className = "sparkle";
@@ -107,21 +106,6 @@
 <BODY>
 <DIV ID="page">
 
-<!-- ===================== HOW TO ADD GIFS =====================
-  Old way (1999):   <IMG SRC="flames.gif">
-  Modern way (respects "reduce motion" setting) using <picture>:
-    - <source> points at the animated .gif and only kicks in when the
-      visitor has NOT asked for reduced motion
-    - <img> holds a still .png fallback (export frame 1 of the GIF)
-  Put your .gif/.png files in the SAME FOLDER as this HTML file and
-  change the SRC names. Free GeoCities-era GIFs: https://gifcities.org
-  and https://cameronsworld.net
-  ============================================================ -->
-
-<!-- Ireland flag: drawn in CSS so it works with no file. To use a real waving-flag GIF
-     instead, replace the DIV with:
-     <PICTURE><SOURCE SRCSET="ireland.gif" MEDIA="(prefers-reduced-motion: no-preference)">
-     <IMG SRC="ireland.png" ALT="Flag of Ireland" WIDTH="90"></PICTURE> -->
 <DIV CLASS="floaty irish" STYLE="top:70px; left:25px;" ROLE="img" ARIA-LABEL="Flag of Ireland"></DIV>
 
 <!-- baseball logo -->
@@ -183,14 +167,6 @@
 
   <HR CLASS="rainbow">
 
-  <!-- ===================== BACKGROUND MUSIC =====================
-    1999 way:  <EMBED SRC="mysong.mid" HIDDEN="true" AUTOSTART="true" LOOP="true">
-    Browsers now BLOCK autoplaying sound, so the modern way is an opt-in
-    player. Put your song (song.mp3 / .ogg / .webm / .mid converted to mp3)
-    next to this file and change the SRC below. "loop" makes it repeat
-    forever; add "autoplay" if you want to TRY (most browsers will ignore
-    it until the visitor has clicked something on the page).
-  ============================================================ -->
   <P CLASS="label">&#9835; MUSIC IS LIFE! &#9835;<BR>
     <AUDIO CONTROLS LOOP ARIA-LABEL="Background music" SRC="song.mp3" STYLE="margin-top:6px;"></AUDIO>
   </P>
@@ -222,7 +198,7 @@
     document.getElementById("monthly").textContent = fmt(curr / 36);
   }
   update();
-  setInterval(update, 50); // recalc 20x per second so the digits blur
+  setInterval(update, 50); 
 </SCRIPT>
 
 </BODY>
