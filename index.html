@@ -111,8 +111,8 @@
     animation: fly linear infinite;
   }
   @keyframes fly {
-    from { transform: translateY(100vh) rotate(0deg); }
-    to   { transform: translateY(-60px) rotate(360deg); }
+    from { transform: translateY(110vh) rotate(0deg); }
+    to   { transform: translateY(-40vh) rotate(360deg); }
   }
 </STYLE>
 <SCRIPT>
@@ -189,7 +189,13 @@
   <P CLASS="label">&#9835; MUSIC IS LIFE! &#9835;<BR>
     <AUDIO CONTROLS LOOP ARIA-LABEL="Background music" SRC="song.mp3" STYLE="margin-top:6px;"></AUDIO>
   </P>
+
+  <PICTURE>
+      <SOURCE SRCSET="flames.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+      <IMG SRC="flames.png" ALT="Animated flames" WIDTH="80" HEIGHT="40">
+    </PICTURE>
                               
+   <HR CLASS="rainbow">                           
   <P>
     <PICTURE>
       <SOURCE SRCSET="brokeback.gif" MEDIA="(prefers-reduced-motion: no-preference)">
