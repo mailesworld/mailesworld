@@ -103,6 +103,34 @@
     document.addEventListener(ev, startMusic, { once: true });
   });
 </SCRIPT>
+<STYLE>
+  .flyer {
+    position: fixed; pointer-events: none; z-index: 5;
+    color: #00FF00; font-family: "Courier New", monospace; font-weight: bold;
+    text-shadow: 1px 1px #003300;
+    animation: fly linear infinite;
+  }
+  @keyframes fly {
+    from { transform: translateY(100vh) rotate(0deg); }
+    to   { transform: translateY(-60px) rotate(360deg); }
+  }
+</STYLE>
+<SCRIPT>
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var HOW_MANY = 15;
+    for (var i = 0; i < HOW_MANY; i++) {
+      var d = document.createElement("SPAN");
+      d.className = "flyer";
+      d.textContent = "$";
+      d.style.left = Math.random() * 100 + "vw";                 // random column
+      d.style.fontSize = (12 + Math.random() * 14) + "px";       // 12-26px
+      d.style.animationDuration = (6 + Math.random() * 10) + "s"; // 6-16s per trip
+      d.style.animationDelay = (-Math.random() * 16) + "s";      // start mid-flight
+      d.style.opacity = 0.4 + Math.random() * 0.6;
+      document.body.appendChild(d);
+    }
+  }
+</SCRIPT>
 <BODY>
 <DIV ID="page">
 
