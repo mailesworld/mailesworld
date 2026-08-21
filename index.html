@@ -146,19 +146,7 @@
 
   <P CLASS="label">$ <SPAN ID="owed" CLASS="money">...</SPAN> owed</P>
                               
-  <P CLASS="label">$ <SPAN ID="monthly" CLASS="money">...</SPAN> monthly amount to pay back</P>
-
-  <HR CLASS="rainbow">
-  <PICTURE>
-    <SOURCE SRCSET="dollarsign.gif" MEDIA="(prefers-reduced-motion: no-preference)">
-    <IMG SRC="dollarsign.png" ALT="" WIDTH="60" HEIGHT="60">
-  </PICTURE>
-
-   <H3 STYLE="color:#FF00FF; font-family:Impact,sans-serif; letter-spacing:2px; margin-bottom:4px;">How much I'll owe in the future...</H3>
-  <TABLE ID="schedule" BORDER="1" CELLPADDING="4" CELLSPACING="0"
-         STYLE="margin:0 auto; border-color:#C0C0C0; font-family:'Courier New',monospace; font-size:14px; color:#FFFF00; background:#000033;">
-    <TR STYLE="color:#00FFFF;"><TH>Date</TH><TH>Owed</TH><TH>Monthly</TH></TR>
-  </TABLE>                           
+  <P CLASS="label">$ <SPAN ID="monthly" CLASS="money">...</SPAN> monthly payment on 36mo schedule </P>                         
 
   <HR CLASS="rainbow">
   <!--
@@ -180,18 +168,30 @@
   <P CLASS="label">&#9835; MUSIC IS LIFE! &#9835;<BR>
     <AUDIO CONTROLS LOOP ARIA-LABEL="Background music" SRC="song.mp3" STYLE="margin-top:6px;"></AUDIO>
   </P>
-
-  <PICTURE>
+                              
+    <PICTURE>
     <SOURCE SRCSET="consbar.gif" MEDIA="(prefers-reduced-motion: no-preference)">
     <IMG SRC="consbar.png" ALT="Under construction" WIDTH="300" HEIGHT="30">
   </PICTURE>
-
+                              
   <P>
     <PICTURE>
       <SOURCE SRCSET="brokeback.gif" MEDIA="(prefers-reduced-motion: no-preference)">
       <IMG SRC="brokeback.png" ALT="Banner" WIDTH="468" HEIGHT="120" STYLE="border:3px outset #C0C0C0; max-width:100%; height:auto;">
     </PICTURE>
   </P>
+
+    <HR CLASS="rainbow">
+  <PICTURE>
+    <SOURCE SRCSET="dollarsign.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+    <IMG SRC="dollarsign.png" ALT="" WIDTH="60" HEIGHT="60">
+  </PICTURE>
+
+   <H3 STYLE="color:#FF00FF; font-family:Impact,sans-serif; letter-spacing:2px; margin-bottom:4px;">How much I'll owe in the future...</H3>
+  <TABLE ID="schedule" BORDER="1" CELLPADDING="4" CELLSPACING="0"
+         STYLE="margin:0 auto; border-color:#C0C0C0; font-family:'Courier New',monospace; font-size:14px; color:#FFFF00; background:#000033;">
+    <TR STYLE="color:#00FFFF;"><TH>Date</TH><TH>Owed</TH><TH>Monthly</TH></TR>
+  </TABLE>  
 
 
 </TD></TR>
@@ -211,7 +211,7 @@
     frac = Math.max(0, Math.min(1, frac));       // clamp to 0..1
     var curr = TOTAL * frac;
     document.getElementById("owed").textContent    = fmt(curr);
-    document.getElementById("monthly").textContent = fmt(curr / 36);
+    document.getElementById("monthly payment").textContent = fmt(curr / 36);
   }
   update();
   setInterval(update, 50); 
