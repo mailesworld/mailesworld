@@ -158,21 +158,9 @@
     <LI>&#9733; <A HREF="https://www.youtube.com/watch?v=4HEpNsmBXoU">Link #3 please watch</A></LI>
   </UL> -->
 
-  <PICTURE>
-    <SOURCE SRCSET="consbar.gif" MEDIA="(prefers-reduced-motion: no-preference)">
-    <IMG SRC="consbar.png" ALT="" WIDTH="400" HEIGHT="20">
-  </PICTURE>
-
-  <HR CLASS="rainbow">
-
   <P CLASS="label">&#9835; MUSIC IS LIFE! &#9835;<BR>
     <AUDIO CONTROLS LOOP ARIA-LABEL="Background music" SRC="song.mp3" STYLE="margin-top:6px;"></AUDIO>
   </P>
-                              
-    <PICTURE>
-    <SOURCE SRCSET="consbar.gif" MEDIA="(prefers-reduced-motion: no-preference)">
-    <IMG SRC="consbar.png" ALT="Under construction" WIDTH="300" HEIGHT="30">
-  </PICTURE>
                               
   <P>
     <PICTURE>
@@ -193,6 +181,12 @@
     <TR STYLE="color:#00FFFF;"><TH>Date</TH><TH>Owed</TH><TH>Monthly</TH></TR>
   </TABLE>  
 
+  <PICTURE>
+    <SOURCE SRCSET="consbar.gif" MEDIA="(prefers-reduced-motion: no-preference)">
+    <IMG SRC="consbar.png" ALT="Under construction" WIDTH="300" HEIGHT="30">
+  </PICTURE>
+                              
+<HR CLASS="rainbow">
 
 </TD></TR>
 </TABLE>
@@ -211,7 +205,7 @@
     frac = Math.max(0, Math.min(1, frac));       // clamp to 0..1
     var curr = TOTAL * frac;
     document.getElementById("owed").textContent    = fmt(curr);
-    document.getElementById("monthly payment").textContent = fmt(curr / 36);
+    document.getElementById("monthly").textContent = fmt(curr / 36);
   }
   update();
   setInterval(update, 50); 
